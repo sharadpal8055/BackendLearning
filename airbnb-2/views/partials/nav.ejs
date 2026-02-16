@@ -1,0 +1,37 @@
+<header class="bg-white shadow-md">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold text-red-500">
+      Airbnb
+    </h1>
+
+    <!-- Links -->
+    <ul class="flex space-x-6 text-gray-700 font-medium">
+
+      <!-- Home -->
+      <li>
+        <a href="/"
+           class="px-2 py-1 border-b-2 transition
+           <%= activePath === '/' 
+               ? 'border-red-500 text-red-500 font-semibold'
+               : 'border-transparent hover:text-red-500 hover:border-red-500' %>">
+          Go to Home
+        </a>
+      </li>
+
+      <!-- Add Home -->
+      <li>
+        <a href="/host/add-home"
+           class="px-2 py-1 border-b-2 transition
+           <%= activePath === '/host/add-home' 
+               ? 'border-red-500 text-red-500 font-semibold'
+               : 'border-transparent hover:text-red-500 hover:border-red-500' %>">
+          Add Home
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+</header>
