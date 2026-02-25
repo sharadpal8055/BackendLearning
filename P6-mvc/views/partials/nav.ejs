@@ -1,0 +1,70 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-bold text-red-500 tracking-wide">
+      Airbnb
+    </a>
+
+    <!-- Navigation -->
+    <ul class="flex items-center space-x-6 text-gray-700 font-medium">
+
+      <!-- Home -->
+      <li>
+        <a href="/"
+           class="px-2 py-1 border-b-2 transition
+           <%= activePath === '/' 
+               ? 'border-red-500 text-red-500 font-semibold'
+               : 'border-transparent hover:text-red-500 hover:border-red-500' %>">
+          Home
+        </a>
+      </li>
+
+      <!-- Host Section -->
+      <li>
+        <a href="/host/add-home"
+           class="px-2 py-1 border-b-2 transition
+           <%= activePath.startsWith('/host') 
+               ? 'border-red-500 text-red-500 font-semibold'
+               : 'border-transparent hover:text-red-500 hover:border-red-500' %>">
+          Host
+        </a>
+      </li>
+
+      <!-- Bookings -->
+      <li>
+        <a href="/store/bookings"
+           class="px-2 py-1 border-b-2 transition
+           <%= activePath === '/store/bookings' 
+               ? 'border-red-500 text-red-500 font-semibold'
+               : 'border-transparent hover:text-red-500 hover:border-red-500' %>">
+          Bookings
+        </a>
+      </li>
+
+      <!-- Favourites -->
+      <li>
+        <a href="/store/favourites"
+           class="px-2 py-1 border-b-2 transition
+           <%= activePath === '/store/favourites' 
+               ? 'border-red-500 text-red-500 font-semibold'
+               : 'border-transparent hover:text-red-500 hover:border-red-500' %>">
+          Favourites
+        </a>
+      </li>
+
+      <!-- Divider -->
+      <li class="border-l h-6 border-gray-300"></li>
+
+      <!-- Add Home Button -->
+      <li>
+        <a href="/host/add-home"
+           class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition shadow-md">
+          + Add Home
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+</header>

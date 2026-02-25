@@ -1,0 +1,105 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <%- include('../partials/nav') %>
+
+  <main class="flex-grow flex items-center justify-center px-6 py-10">
+    
+    <div class="bg-white shadow-xl rounded-2xl w-full max-w-lg p-8">
+
+      <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+        Register Your Home
+      </h1>
+
+    <form method="POST" action="/host/submit-home">
+
+
+        <!-- House Name -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">
+            House Name
+          </label>
+          <input
+            type="text"
+            name="houseName"
+            placeholder="Enter house name"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition"
+          />
+        </div>
+
+        <!-- Price -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">
+            Price Per Night (₹)
+          </label>
+          <input
+            type="number"
+            name="price"
+            placeholder="Enter price"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition"
+          />
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">
+            Location
+          </label>
+          <input
+            type="text"
+            name="location"
+            placeholder="Enter location"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition"
+          />
+        </div>
+
+        <!-- Rating -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">
+            Rating (1 to 5)
+          </label>
+          <input
+            type="number"
+            name="rating"
+            min="1"
+            max="5"
+            step="0.1"
+            placeholder="Enter rating"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 transition"
+          />
+        </div>
+
+        <!-- Photo -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">
+             Photo URL
+          </label>
+          <input
+            type="url"
+            name="photoUrl"
+            class="w-full text-gray-600 border border-gray-300 rounded-lg px-3 py-2 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-400 transition"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition shadow-md"
+        >
+          Submit Home
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

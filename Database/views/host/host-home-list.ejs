@@ -1,0 +1,91 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+<%- include('../partials/nav') %>
+
+<main class="flex-grow max-w-7xl mx-auto px-6 py-10">
+
+  <h3 class="text-3xl font-bold text-gray-800 mb-10">
+    Registered Homes
+  </h3>
+
+  <% if (homes && homes.length > 0) { %>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <% homes.forEach(function(home){ %>
+
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+
+          <!-- Image -->
+          <div class="relative">
+            <img 
+              src="<%= home.photoUrl ? home.photoUrl : '/images/default.jpg' %>" 
+              alt="<%= home.houseName %>" 
+              class="w-full h-56 object-cover"
+            />
+
+            <!-- Rating Badge -->
+            <div class="absolute top-3 right-3 bg-white px-3 py-1 rounded-full shadow text-sm font-semibold text-yellow-500">
+              ⭐ <%= home.rating %>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-5 space-y-2">
+
+            <h4 class="text-xl font-semibold text-gray-800 truncate">
+              <%= home.houseName %>
+            </h4>
+
+            <p class="text-gray-500 text-sm">
+              📍 <%= home.location %>
+            </p>
+
+            <div class="flex justify-between items-center pt-3">
+              <p class="text-lg font-bold text-gray-900">
+                ₹ <%= home.price %>
+                <span class="text-sm font-normal text-gray-500">/ night</span>
+              </p>
+
+              <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">
+                view
+              </button>
+              <a href="/store/homes/<%= home.id %>">Details</a>
+             <a href="/host/edit-home/<%= home.id %>?editing=true">
+  Edit
+</a>
+                <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+             Delete
+              </button>
+               <%- include('../partials/favourite',{home:home}) %>
+            </div>
+
+          </div>
+        </div>
+
+      <% }); %>
+
+    </div>
+
+  <% } else { %>
+
+    <!-- Empty State -->
+    <div class="flex flex-col items-center justify-center mt-20 text-center">
+      <img src="/images/empty.png" class="w-40 mb-6 opacity-70" />
+      <p class="text-gray-500 text-lg">
+        No homes registered yet.
+      </p>
+      <a href="/host/add-home"
+         class="mt-4 bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition">
+         Add Your First Home
+      </a>
+    </div>
+
+  <% } %>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+<%- include('../partials/nav') %>
+
+<main class="flex-grow max-w-6xl mx-auto px-6 py-10">
+
+  <!-- Page Title -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-8">
+    My Favourites ❤️
+  </h1>
+
+  <!-- Favourites Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Favourite Card 1 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="https://picsum.photos/400/250?random=11"
+           class="w-full h-48 object-cover" />
+      <div class="p-5 space-y-2">
+        <h2 class="text-xl font-semibold text-gray-800">
+          <%= home.houseName %>
+        </h2>
+        <p class="text-gray-600"> <%= home.location %></p>
+        <p class="text-gray-600">₹ <%= home.price %></p>
+        <p class="text-yellow-500">⭐ 4.8</p>
+        <form action="/favourites/delete/<%= home.id %>" method="post">
+                <button class="mt-3 w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-black transition">
+          Remove from Favourites
+        </button>
+              </form>
+     
+      </div>
+    </div>
+
+ 
+
+    <!-- Favourite Card 3 -->
+    
+
+  </div>
+
+  <!-- Empty State (Optional Future Use) -->
+  <!--
+  <div class="text-center mt-20">
+    <p class="text-gray-500 text-lg">No favourites added yet.</p>
+  </div>
+  -->
+
+</main>
+
+</body>
+</html>

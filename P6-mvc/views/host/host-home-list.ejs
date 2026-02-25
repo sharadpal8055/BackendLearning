@@ -1,0 +1,83 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+<%- include('../partials/nav') %>
+
+<main class="flex-grow max-w-6xl mx-auto px-6 py-10">
+
+  <!-- Page Title -->
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+      Your Listed Homes
+    </h1>
+
+    <a href="/host/add-home"
+       class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition shadow-md">
+      + Add New Home
+    </a>
+  </div>
+
+  <!-- Homes Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Home Card 1 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="https://picsum.photos/400/250?random=21"
+           class="w-full h-48 object-cover" />
+      <div class="p-5 space-y-2">
+        <h2 class="text-xl font-semibold text-gray-800">
+          Beach Paradise Villa
+        </h2>
+        <p class="text-gray-600">Location: Goa</p>
+        <p class="text-gray-600">₹ 5000 / night</p>
+        <p class="text-yellow-500">⭐ 4.7</p>
+
+        <!-- Action Buttons -->
+        <div class="flex space-x-3 pt-3">
+          <a href="#"
+             class="flex-1 text-center bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+            Edit
+          </a>
+
+          <button
+            class="flex-1 bg-gray-800 text-white py-2 rounded-lg hover:bg-black transition">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Card 2 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+      <img src="https://picsum.photos/400/250?random=22"
+           class="w-full h-48 object-cover" />
+      <div class="p-5 space-y-2">
+        <h2 class="text-xl font-semibold text-gray-800">
+          Mountain Cabin Retreat
+        </h2>
+        <p class="text-gray-600">Location: Manali</p>
+        <p class="text-gray-600">₹ 3200 / night</p>
+        <p class="text-yellow-500">⭐ 4.3</p>
+
+        <div class="flex space-x-3 pt-3">
+          <a href="#"
+             class="flex-1 text-center bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+            Edit
+          </a>
+
+          <button
+            class="flex-1 bg-gray-800 text-white py-2 rounded-lg hover:bg-black transition">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>

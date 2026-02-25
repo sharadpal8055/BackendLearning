@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+<%- include('../partials/nav') %>
+  <!-- Navbar -->
+ 
+
+  <!-- Main Section -->
+  <main class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg">
+
+    <h3 class="text-xl font-semibold mb-6 border-b pb-2">
+      Registered Homes
+    </h3>
+
+    <% if (homes && homes.length > 0) { %>
+      <ul class="space-y-4">
+        <% homes.forEach(function(home){ %>
+          <li class="p-4 border rounded-lg shadow-sm hover:shadow-md transition">
+            <h4 class="text-lg font-semibold text-gray-800">
+              <%= home.houseName %>
+            </h4>
+            <p class="text-gray-600">₹ <%= home.pricePerNight %> per night</p>
+            <p class="text-gray-500">Location: <%= home.location %></p>
+            <p class="text-yellow-500">⭐ <%= home.rating %></p>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p class="text-gray-500">No homes registered yet.</p>
+    <% } %>
+
+  </main>
+
+</body>
+</html>
